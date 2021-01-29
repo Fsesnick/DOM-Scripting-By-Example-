@@ -5,5 +5,7 @@ form.addEventListener('submit', (e) => {
 
   e.preventDefault();
   console.log(input.value);
-
+  const ul = document.getElementById('invitedList');
+  const li = document.createElement('li');
+  ul.appendChild(li);
 });
