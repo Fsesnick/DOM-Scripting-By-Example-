@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 const form = document.getElementById('registrar');
 const input = form.querySelector('input');
 
@@ -34,10 +35,16 @@ filterCheckBox.addEventListener('change', (e) => {
 });
 
 function createLI(text) {
+    function createElement(elementName, prop, value) {
+      const element = document.createElement(elementName);  
+      element[prop] = value; 
+      return element;
+    }
+  
   const li = document.createElement('li');
   
-  const span = document.createElement('span');  
-  span.textContent = text;
+  const span = createElement('span', 'textContent', text);  
+   
   li.appendChild(span);
   
   const label = document.createElement('label');
@@ -105,5 +112,7 @@ ul.addEventListener('click', (e) => {
       button.textContent = 'edit';
     }
   }
+});  
+
 });  
   
