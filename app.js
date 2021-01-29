@@ -43,27 +43,16 @@ function createLI(text) {
   function appendToLI(elementName, prop, value){  
      const element = createElement(elementName, prop, value);     
      li.appendChild(element);  
+     return element;
     }
   
-  const li = document.createElement('li');
-  
-//  const span = createElement('span', 'textContent', text);     
-//  li.appendChild(span);
-  appendToLI('span', 'textContent', text); 
-  const label = createElement('label', 'textContent', 'Confirmed');
-   
-  const checkbox = createElement('input', 'type','checlbox');
-  label.appendChild(checkbox);
-  li.appendChild(label);  
-  
- // const editButton = createElement('button', 'textContent', 'edit');   
- // li.appendChild(editButton);
-  appendToLI('button', 'textContent', 'edit');
-  
-//  const removeButton = createElement('button', 'textContent', 'remove');    
-  //li.appendChild(removeButton);
-   appendToLI('button', 'textContent', 'remove');
-  return li;
+    const li = document.createElement('li');
+    appendToLI('span', 'textContent', text);     
+    appendToLI('label', 'textContent', 'Confirmed')
+      .appendChild(createElement('input', 'type', 'checkbox'));
+    appendToLI('button', 'textContent', 'edit');
+    appendToLI('button', 'textContent', 'remove');
+    return li;
 }
 
 form.addEventListener('submit', (e) => {
