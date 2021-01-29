@@ -40,26 +40,29 @@ function createLI(text) {
       element[prop] = value; 
       return element;
     }
+  function appendToLI(elementName, prop, value){  
+     const element = createElement(elementName, prop, value);     
+     li.appendChild(element);  
+    }
   
   const li = document.createElement('li');
   
-  const span = createElement('span', 'textContent', text);  
-   
-  li.appendChild(span);
-  
+//  const span = createElement('span', 'textContent', text);     
+//  li.appendChild(span);
+  appendToLI('span', 'textContent', text); 
   const label = createElement('label', 'textContent', 'Confirmed');
    
   const checkbox = createElement('input', 'type','checlbox');
-  
   label.appendChild(checkbox);
   li.appendChild(label);  
   
-  const editButton = createElement('button', 'textContent', 'edit');   
-  li.appendChild(editButton);
+ // const editButton = createElement('button', 'textContent', 'edit');   
+ // li.appendChild(editButton);
+  appendToLI('button', 'textContent', 'edit');
   
-  const removeButton = createElement('button', 'textContent', 'remove');  
-  
-  li.appendChild(removeButton);
+//  const removeButton = createElement('button', 'textContent', 'remove');    
+  //li.appendChild(removeButton);
+   appendToLI('button', 'textContent', 'remove');
   return li;
 }
 
