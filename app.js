@@ -35,20 +35,28 @@ filterCheckBox.addEventListener('change', (e) => {
 
 function createLI(text) {
   const li = document.createElement('li');
+  
   const span = document.createElement('span');  
   span.textContent = text;
   li.appendChild(span);
+  
   const label = document.createElement('label');
   label.textContent = 'Confirmed';
+  
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
+  
   label.appendChild(checkbox);
   li.appendChild(label);  
+  
   const editButton = document.createElement('button');
   editButton.textContent = 'edit';
+  
   li.appendChild(editButton);
+  
   const removeButton = document.createElement('button');
   removeButton.textContent = 'remove';
+  
   li.appendChild(removeButton);
   return li;
 }
